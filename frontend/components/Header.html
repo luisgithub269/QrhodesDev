@@ -3,8 +3,15 @@
 
     function Header() { 
         return (
-            <div>
-                <Link to="/">Inicio</Link>
+            <div className="shadow-2xl p-5">
+                <h2 className="text-2xl font-bold mb-3">QRhodes from scratch</h2>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/">Inicio</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formRegistroProducto">Registro Producto</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formRegistroProveedores">Registro Proveedores</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formIngresoInventarioProduccion">Registro Ingreso Inventario Produccion</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formInventarioInsumoMateriaPrima">Registro Inventario Materia Prima</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formSalidaInventarioInsumoMateriaPrima">Registro Salida Inventario Insumo Materia Prima</NavLink>
+                <NavLink exact activeClassName="bg-blue-500" className="mr-3 px-3 py-1 bg-blue-700 text-white rounded-2xl" to="/formRegistroVendedores">Registro Vendedores</NavLink>
             </div>
         )
     } 
