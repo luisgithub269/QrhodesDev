@@ -1,8 +1,83 @@
 //<script type="text/jsx">
 
     function FormRegistroProveedores() {
+        const guardarFormulario = (datosFormulario) => {
+            console.log(datosFormulario)
+        }
+
         return (
-            <div>FormRegistroProveedores</div>
+            <div className="px-20">
+                <h2 className="text-center font-bold text-xl my-6">Registro de Proveedores</h2>                
+                <Form onFinish={guardarFormulario} layout="vertical">
+                    <Item name="codigo" label="Codigo" 
+                        rules={
+                            [{required: true, message:"Ingrese Codigo del proveedor"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="Codigo"/>
+                    </Item>                    
+                    <Item name="ccnit" label="CC/Nit" 
+                        rules={
+                            [{required: true, message:"Ingrese CC/Nit"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="CC/Nit"/>
+                    </Item>
+                    <Item name="nombrecompleto" label="Nombre Completo o Razon Social" 
+                        rules={[
+                            {required: true, message:"Ingrese el Nombre Completo o Razon Social"}                            
+                        ]}
+                    >
+                        <Input type="text" placeholder="Nombre Completo o Razon Social" />
+                    </Item>
+                    <Item name="telefonoCel" label="Telefono/Cel" 
+                        rules={[
+                            {required: true, message:"Ingrese numero de telefono o celular"}                            
+                        ]}
+                    >
+                        <Input type="number" placeholder="Telefono/Cel"/>
+                    </Item>
+                    <Item name="direccion" label="Direccion" 
+                        rules={[
+                            {required: true, message:"Ingrese Direccion del Proveedor"}                            
+                        ]}
+                    >
+                        <Input type="any" placeholder="Direccion"/>
+                    </Item>                                        
+                    <Item name="ciudad" label="Ciudad" 
+                        rules={[
+                            {required: true, message:"Ingrese la cuidad del contacto"}
+                            ]}
+                        >
+                        <Input type="text" placeholder="Ciudad"/>
+                    </Item>
+                    <Item name="correo" label="Correo" 
+                        rules={[
+                            {required: true, message:"Ingrese el correo del contacto"}
+                            ]}
+                        >
+                        <Input type="email" placeholder="Correo"/>
+                    </Item>
+                    <Item name="contacto" label="Contacto" 
+                        rules={[
+                            {required: true, message:"Ingrese el contacto del proveedor"}
+                            ]}
+                        >
+                        <Input type="text" placeholder="Contacto"/>
+                    </Item>
+                    <Item name="telefonoCelcontacto" label="Telefono/Cel" 
+                        rules={[
+                            {required: true, message:"Ingrese numero de telefono o celular del contacto"}                            
+                        ]}
+                    >
+                        <Input type="number" placeholder="Telefono/Cel"/>
+                    </Item>
+                    <Item>
+                        <Button>Reset</Button>
+                        <Button className="bg-blue-500 text-white" htmlType="submit">Guardar</Button>                        
+                    </Item>
+                </Form>
+            </div>
         )
     }
 

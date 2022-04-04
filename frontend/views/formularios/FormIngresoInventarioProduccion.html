@@ -1,8 +1,69 @@
 //<script type="text/jsx">
 
     function FormIngresoInventarioProduccion() {
+        const guardarFormulario = (datosFormulario) => {
+            console.log(datosFormulario)
+        }
+
         return (
-            <div>FormIngresoInventarioProduccion</div>
+            <div className="px-20">
+                <h2 className="text-center font-bold text-xl my-6">Registro de Ingreso Inventario Produccion</h2>                
+                <Form onFinish={guardarFormulario} layout="vertical">
+                    <Item name="codigo" label="Codigo" 
+                        rules={
+                            [{required: true, message:"Ingrese el Codigo del Producto"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="Codigo del Producto"/>
+                    </Item>
+                    <Item name="nombreproducto" label="Nombre del Producto" 
+                        rules={
+                            [{required: true, message:"Ingrese el Nombre del Producto"}                            
+                        ]}
+                    >
+                            <Input type="text" placeholder="Nombre del Producto"/>
+                    </Item>
+                    <Item name="presentacion" label="Presentacion" 
+                        rules={[
+                            {required: true, message:"Ingrese la Presentacion del Prodcuto"}                            
+                        ]}
+                    >
+                        <Input type="text" placeholder="Presentacion" />
+                    </Item>
+                    <Item name="fecha" label="Fecha de Ingreso" 
+                        rules={[
+                            {required: true, message:"Ingrese Fecha de Ingreso del Producto"}                            
+                        ]}
+                    >
+                        <Input type="date" placeholder="Fecha de Ingreso"/>
+                    </Item>
+                    <Item name="bodegalocal" label="Bodega/Local" 
+                        rules={[
+                            {required: true, message:"Ingrese lugar de estancia del Producto"}                            
+                        ]}
+                    >
+                        <Input type="text" placeholder="Bodega/Local"/>
+                    </Item>
+                    <Item name="cantidad" label="Cantidad" 
+                        rules={[
+                            {required: true, message:"Ingrese la cantidad del Producto"}
+                            ]}
+                        >
+                        <Input type="number" placeholder="Cantidad"/>
+                    </Item>
+                    <Item name="lote" label="Lote" 
+                        rules={[
+                            {required: true, message:"Ingrese lote de produccion del Producto"}
+                            ]}
+                        >
+                        <Input type="any" placeholder="Lote"/>
+                    </Item>
+                    <Item>
+                        <Button>Reset</Button>
+                        <Button className="bg-blue-500 text-white" htmlType="submit">Guardar</Button>                        
+                    </Item>
+                </Form>
+            </div>
         )
     }
 

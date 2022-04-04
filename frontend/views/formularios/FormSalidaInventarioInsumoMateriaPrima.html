@@ -1,8 +1,48 @@
 //<script type="text/jsx">
 
     function FormSalidaInventarioInsumoMateriaPrima() {
+        const guardarFormulario = (datosFormulario) => {
+            console.log(datosFormulario)
+        }
+
         return (
-            <div>FormSalidaInventarioInsumoMateriaPrima</div>
+            <div className="px-20">
+                <h2 className="text-center font-bold text-xl my-6">Registro de Salida Inventario Insumo Materia Prima</h2>                
+                <Form onFinish={guardarFormulario} layout="vertical">
+                    <Item name="codigo" label="Codigo" 
+                        rules={
+                            [{required: true, message:"Ingrese el Codigo del insumo o materia prima"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="Codigo del Producto"/>
+                    </Item>
+                    <Item name="nombreinsumoMP" label="Nombre del Insumo/Materia prima" 
+                        rules={
+                            [{required: true, message:"Ingrese el Nombre del Insumo o Materia Prima"}                            
+                        ]}
+                    >
+                            <Input type="text" placeholder="Nombre del Insumo o Materia prima"/>
+                    </Item>                    
+                    <Item name="cantidad" label="Cantidad (kg o unidad envase)" 
+                        rules={[
+                            {required: true, message:"Ingrese la cantidad del Insumo o Materia Prima"}
+                            ]}
+                        >
+                        <Input type="number" placeholder="Cantidad"/>
+                    </Item>
+                    <Item name="fecha" label="Fecha de Ingreso" 
+                        rules={[
+                            {required: true, message:"Ingrese Fecha de Ingreso del Insumo o Materia Prima"}                            
+                        ]}
+                    >
+                        <Input type="date" placeholder="Fecha de Ingreso"/>
+                    </Item>
+                    <Item>
+                        <Button>Reset</Button>
+                        <Button className="bg-blue-500 text-white" htmlType="submit">Guardar</Button>                        
+                    </Item>
+                </Form>
+            </div>
         )
     }
 

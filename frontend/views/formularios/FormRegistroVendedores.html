@@ -1,8 +1,69 @@
 //<script type="text/jsx">
 
     function FormRegistroVendedores() {
+        const guardarFormulario = (datosFormulario) => {
+            console.log(datosFormulario)
+        }
+
         return (
-            <div>FormRegistroVendedores</div>
+            <div className="px-20">
+                <h2 className="text-center font-bold text-xl my-6">Registro de Vendedores</h2>                
+                <Form onFinish={guardarFormulario} layout="vertical">
+                    <Item name="codigo" label="Codigo" 
+                        rules={
+                            [{required: true, message:"Ingrese Codigo del Vendedor"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="Codigo"/>
+                    </Item>                    
+                    <Item name="cc" label="CC" 
+                        rules={
+                            [{required: true, message:"Ingrese CC del Vendedor"}                            
+                        ]}
+                    >
+                            <Input type="any" placeholder="CC"/>
+                    </Item>
+                    <Item name="nombrecompleto" label="Nombre Completo" 
+                        rules={[
+                            {required: true, message:"Ingrese el Nombre Completo "}                            
+                        ]}
+                    >
+                        <Input type="text" placeholder="Nombre Completo" />
+                    </Item>
+                    <Item name="direccion" label="Direccion" 
+                        rules={[
+                            {required: true, message:"Ingrese Direccion del Vendedor"}                            
+                        ]}
+                    >
+                        <Input type="any" placeholder="Direccion"/>
+                    </Item>
+                    <Item name="telefonoCel" label="Telefono/Cel" 
+                        rules={[
+                            {required: true, message:"Ingrese numero de telefono o celular"}                            
+                        ]}
+                    >
+                        <Input type="number" placeholder="Telefono/Cel"/>
+                    </Item>
+                    <Item name="correo" label="Correo" 
+                        rules={[
+                            {required: true, message:"Ingrese el correo del contacto"}
+                            ]}
+                        >
+                        <Input type="email" placeholder="Correo"/>
+                    </Item>                    
+                    <Item name="ciudad" label="Ciudad" 
+                        rules={[
+                            {required: true, message:"Ingrese la cuidad del contacto"}
+                            ]}
+                        >
+                        <Input type="text" placeholder="Ciudad"/>
+                    </Item>                      
+                    <Item>
+                        <Button>Reset</Button>
+                        <Button className="bg-blue-500 text-white" htmlType="submit">Guardar</Button>                        
+                    </Item>
+                </Form>
+            </div>
         )
     }
 
